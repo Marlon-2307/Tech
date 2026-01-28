@@ -1,0 +1,1575 @@
+/* ============================================
+   TECHREPAIR - ESTILOS COMPLETOS
+   ============================================ */
+
+/* Variables CSS */
+:root {
+    --color-primary: #007bff;
+    --color-primary-dark: #0056b3;
+    --color-secondary: #28a745;
+    --color-secondary-dark: #1e7e34;
+    --color-danger: #dc3545;
+    --color-light: #f8f9fa;
+    --color-dark: #212529;
+    --color-text: #333;
+    --color-text-light: #666;
+    --color-border: #dee2e6;
+    --color-whatsapp: #25d366;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 15px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+}
+
+/* Reset y Estilos Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Zalando Sans Expanded", sans-serif;
+    color: var(--color-text);
+    line-height: 1.6;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   NAVEGACIÓN - DISEÑO MODERNO
+   ============================================ */
+.navbar {
+    background: linear-gradient(135deg, #0a1128 0%, #1a2847 50%, #0f1629 100%);
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid rgba(0, 255, 136, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 2rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #00ff88, #00d4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+}
+
+.nav-brand i {
+    font-size: 2rem;
+    color: #00ff88;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00ff88, #00d4ff);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: white;
+    background-color: rgba(0, 255, 136, 0.15);
+    transform: translateY(-2px);
+}
+
+.nav-links a:hover::before {
+    width: 100%;
+}
+
+/* ============================================
+   HERO MODERNO ULTRA MODERNO - 2 COLUMNAS
+   ============================================ */
+.hero-modern {
+    position: relative;
+    min-height: 85vh;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a1128 0%, #1a2847 50%, #0f1629 100%);
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-image: url('https://images.unsplash.com/photo-1555949519-2f4b104b6cb1?w=1200&h=1200&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.4;
+}
+
+.hero-gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(10,17,40,0.95) 0%, rgba(26,40,71,0.85) 40%, rgba(26,40,71,0.3) 100%);
+    z-index: 1;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero-waves {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    opacity: 0.3;
+    animation: wave 15s linear infinite;
+}
+
+@keyframes wave {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+}
+
+.floating-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    display: none;
+}
+
+.circle,
+.square {
+    position: absolute;
+    opacity: 0.05;
+    border-radius: 50%;
+    display: none;
+}
+
+.circle-1 {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.5);
+    top: -150px;
+    right: -150px;
+    animation: float 20s ease-in-out infinite;
+}
+
+.circle-2 {
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.3);
+    bottom: -100px;
+    left: -100px;
+    animation: float 25s ease-in-out infinite reverse;
+}
+
+.circle-3 {
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.2);
+    top: 50%;
+    right: 10%;
+    animation: float 22s ease-in-out infinite;
+}
+
+.circle-4 {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.15);
+    top: 20%;
+    left: 5%;
+    animation: float 18s ease-in-out infinite reverse;
+}
+
+.square-1 {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.1);
+    bottom: 20%;
+    right: 15%;
+    animation: rotate 30s linear infinite;
+    border-radius: 0;
+}
+
+.square-2 {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.08);
+    top: 30%;
+    right: 5%;
+    animation: rotate 40s linear infinite reverse;
+    border-radius: 0;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    25% { transform: translateY(-20px) translateX(10px); }
+    50% { transform: translateY(-40px) translateX(-10px); }
+    75% { transform: translateY(-20px) translateX(10px); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.1); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+.hero-modern-content {
+    position: relative;
+    z-index: 10;
+    color: white;
+    max-width: 100%;
+    padding: 60px 50px;
+    animation: fadeInUp 1s ease forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    grid-column: 1;
+    text-align: left;
+}
+
+.hero-right-column {
+    position: relative;
+    z-index: 10;
+    padding: 50px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-column: 2;
+}
+
+.hero-badge-new {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 24px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+    animation: slideDown 0.8s ease forwards 0.2s both;
+    position: relative;
+}
+
+.badge-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.badge-pulse {
+    width: 8px;
+    height: 8px;
+    background: #00ff88;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {hero-buttons-new
+    0%, 100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7); }
+    50% { box-shadow: 0 0 0 10px rgba(0, 255, 136, 0); }
+}
+
+.hero-title-new {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    animation: slideDown 0.5s ease forwards 0.2s both;
+    letter-spacing: -2px;
+    color: white;
+    text-align: center;
+    max-width: 90%;
+}
+
+.title-line {
+    display: flex;
+    color: white;
+    font-weight: 900;
+}
+
+.title-highlight {
+    display: block;
+    background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 900;
+    text-shadow: none;
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.5)); }
+    50% { filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.8)); }
+}
+
+.hero-subtitle-new {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    animation: slideDown 0.8s ease forwards 0.4s both;
+    max-width: 90%;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+}
+
+.hero-buttons-new {
+    display: block;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    animation: slideDown 0.8s ease forwards 0.6s both;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-modern {
+    position: relative;
+    padding: 16px 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    width: fit-content;
+}
+
+.btn-modern-primary {
+    background: rgba(255, 255, 255, 0);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.btn-modern-primary:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 255, 136, 0.6);
+    animation: none;
+}
+
+.btn-modern-secondary {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.btn-modern-secondary:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+.btn-icon {
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-modern:hover .btn-icon {
+    transform: translate(5px, 0);
+}
+
+.btn-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.hero-stats-new {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    animation: slideDown 0.8s ease forwards 0.8s both;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.stat-item-new {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.stat-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.counter {
+    background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-symbol {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-top: 0;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.stat-divider {
+    display: none;
+    width: 2px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    animation: slideDown 0.8s ease forwards 1.2s both;
+    z-index: 15;
+}
+
+.mouse {
+    width: 24px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 6px;
+    position: relative;
+}
+
+.mouse::after {
+    content: '';
+    width: 3px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 1px;
+    animation: scrollDown 2s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
+    0% { opacity: 1; transform: translateY(0); }
+    50% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(12px); }
+}
+
+.scroll-text {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-secondary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-whatsapp {
+    background-color: var(--color-whatsapp);
+    color: white;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    width: 100%;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ead50;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+/* ============================================
+   SERVICIOS - DISEÑO MODERNO
+   ============================================ */
+.servicios {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 50%, #f0f3ff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.servicios::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(circle, rgba(0, 255, 136, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.servicios h2,
+.ventajas h2,
+.contacto h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--color-dark);
+    position: relative;
+    padding-bottom: 1rem;
+    z-index: 1;
+    font-weight: 900;
+}
+
+.servicios h2::after,
+.ventajas h2::after,
+.contacto h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(90deg, #00ff88, #00d4ff);
+    border-radius: 3px;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.servicio-card {
+    background: white;
+    padding: 3.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.servicio-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #00ff88, #00d4ff);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 255, 136, 0.15);
+    border-color: rgba(0, 255, 136, 0.3);
+}
+
+.servicio-card:hover::before {
+    transform: scaleX(1);
+}
+
+.card-icon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2.5rem;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+}
+
+.servicio-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-dark);
+    font-weight: 700;
+}
+
+.servicio-lista {
+    list-style: none;
+    text-align: left;
+}
+
+.servicio-lista li {
+    padding: 0.7rem 0;
+    color: var(--color-text-light);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.servicio-lista i {
+    color: #00ff88;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* ============================================
+   CONTACTO
+   ============================================ */
+.contacto {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 50%, #f0f3ff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.contacto::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(circle, rgba(0, 255, 136, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.contacto h2 {
+    position: relative;
+    z-index: 1;
+    color: var(--color-dark);
+    font-weight: 900;
+}
+
+.contacto h2::after {
+    background: linear-gradient(90deg, #00ff88, #00d4ff);
+}
+
+.contacto-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+}
+
+.contacto-info {
+    background: white;
+    color: var(--color-dark);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(0, 255, 136, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.contacto-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #00ff88, #00d4ff);
+}
+
+.contacto-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background: rgba(0, 255, 136, 0.03);
+    border-radius: 12px;
+    border-left: 4px solid #00ff88;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    background: rgba(0, 255, 136, 0.08);
+    transform: translateX(5px);
+}
+
+.contact-item i {
+    font-size: 1.8rem;
+    color: #00ff88;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.contact-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+    color: var(--color-dark);
+}
+
+.contact-item p {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    margin: 0;
+    font-weight: 600;
+}
+
+.contact-item small {
+    display: block;
+    font-size: 0.8rem;
+    color: #00ff88;
+    font-weight: 600;
+    margin-top: 0.3rem;
+}
+
+.contacto-info > p {
+    margin-bottom: 2rem;
+    opacity: 0.85;
+    line-height: 1.7;
+    color: var(--color-text-light);
+}
+
+.info-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    flex-shrink: 0;
+    color: #00ff88;
+    font-weight: bold;
+}
+
+.info-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+    color: var(--color-dark);
+}
+
+.info-item p {
+    opacity: 0.85;
+    color: var(--color-text-light);
+}
+
+.whatsapp-buttons {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid rgba(0, 255, 136, 0.2);
+}
+
+.whatsapp-buttons h4 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-dark);
+}
+
+/* ============================================
+   FORMULARIO
+   ============================================ */
+.formulario-container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(0, 255, 136, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.formulario-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #00ff88, #00d4ff);
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.85rem;
+    border: 2px solid rgba(0, 255, 136, 0.3);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--color-dark);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #00ff88;
+    box-shadow: 0 0 0 4px rgba(0, 255, 136, 0.3);
+    background-color: white;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.formulario-estatus {
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    display: none;
+}
+
+.formulario-estatus.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 2px solid #c3e6cb;
+    display: block;
+}
+
+.formulario-estatus.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 2px solid #f5c6cb;
+    display: block;
+}
+
+/* ============================================
+   VENTAJAS - DISEÑO MODERNO
+   ============================================ */
+.ventajas {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #0a1128 0%, #1a2847 50%, #0f1629 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.ventajas::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -50%;
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(circle, rgba(0, 255, 136, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.ventajas h2 {
+    color: white;
+}
+
+.ventajas h2::after {
+    background: linear-gradient(90deg, #00ff88, #00d4ff);
+}
+
+.ventajas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.ventaja-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid rgba(0, 255, 136, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+}
+
+.ventaja-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 50px rgba(0, 255, 136, 0.2);
+    border-color: rgba(0, 255, 136, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.ventaja-card i {
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, #00ff88, #00d4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+.ventaja-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: white;
+    font-weight: 700;
+}
+
+.ventaja-card p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+}
+
+/* ============================================
+   FAQ - DISEÑO MODERNO
+   ============================================ */
+.faq {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 50%, #f0f3ff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.faq::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(circle, rgba(0, 255, 136, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.faq h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: var(--color-dark);
+    position: relative;
+    padding-bottom: 1rem;
+    font-weight: 900;
+}
+
+.faq h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(90deg, #00ff88, #00d4ff);
+    border-radius: 3px;
+}
+
+.faq-subtitle {
+    text-align: center;
+    color: var(--color-text-light);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.faq-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    border: 2px solid rgba(0, 255, 136, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.faq-item:hover {
+    border-color: #00ff88;
+    box-shadow: 0 10px 40px rgba(0, 255, 136, 0.15);
+    transform: translateY(-2px);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1.5rem;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    transition: all 0.3s ease;
+    text-align: left;
+    font-family: inherit;
+}
+
+.faq-question:hover {
+    background-color: #f8f9ff;
+}
+
+.faq-question i {
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    color: #02c86b;
+}
+
+.faq-item.active .faq-question {
+    background: #02c86b;
+    color: white;
+}
+
+.faq-item.active .faq-question i {
+    color: white;
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: rgba(0, 255, 136, 0.02);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    border-top: 3px solid #00ff88;
+}
+
+.faq-answer p {
+    padding: 1.5rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+}
+
+/* Botones flotantes */
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 9999;
+}
+
+.float-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    text-decoration: none;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.float-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+/* WhatsApp */
+.float-btn.whatsapp {
+    background-color: #25D366;
+}
+
+/* Email */
+.float-btn.email {
+    background-color: #0072C6;
+}
+
+
+/* ============================================
+   FOOTER - DISEÑO MEJORADO
+   ============================================ */
+.footer {
+    background: linear-gradient(135deg, #0a1128 0%, #1a2847 50%, #0f1629 100%);
+    color: white;
+    padding: 4rem 0 2rem;
+    text-align: center;
+    border-top: 2px solid rgba(0, 255, 136, 0.2);
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 5rem;
+}
+
+.footer-section {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #00ff88;
+    font-weight: 700;
+}
+
+.footer-section p {
+    opacity: 0.85;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+    opacity: 0.85;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #00ff88;
+    transform: translateX(5px);
+}
+
+.footer-copyright {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(0, 255, 136, 0.2);
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.footer p {
+    opacity: 0.9;
+    font-weight: 500;
+    margin: 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(0, 255, 136, 0.1);
+}
+
+.social-links a:hover {
+    background: linear-gradient(135deg, #00ff88, #00d4ff);
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .hero-modern {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 60px 0;
+    }
+
+    .hero-modern-content,
+    .hero-right-column {
+        grid-column: 1;
+        padding: 40px 25px;
+    }
+
+    .hero-title-new {
+        font-size: 3.5rem;
+        letter-spacing: -1px;
+    }
+
+    .hero-subtitle-new {
+        font-size: 1rem;
+    }
+
+    .hero-buttons-new {
+        gap: 15px;
+        margin-bottom: 40px;
+    }
+
+    .btn-modern {
+        padding: 14px 30px;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .hero-stats-new {
+        gap: 25px;
+        padding-top: 15px;
+    }
+
+    .stat-item-new {
+        width: 100%;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.95rem;
+    }
+
+    .navbar .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contacto-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .servicios,
+    .ventajas,
+    .contacto,
+    .faq {
+        padding: 3rem 0;
+    }
+
+    .servicios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ventajas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer .container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-section ul li a:hover {
+        transform: none;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-modern {
+        min-height: auto;
+        padding: 40px 0;
+    }
+
+    .hero-modern-content,
+    .hero-right-column {
+        padding: 30px 20px;
+    }
+
+    .hero-title-new {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        letter-spacing: -0.5px;
+    }
+
+    .hero-subtitle-new {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .hero-buttons-new {
+        margin-bottom: 30px;
+        gap: 20px;
+    }
+
+    .btn-modern {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+        width: 100%;
+    }
+
+    .hero-stats-new {
+        gap: 20px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+    }
+
+    .servicio-card {
+        padding: 1.5rem;
+    }
+
+    .card-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+
+    .servicio-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .contacto-info,
+    .formulario-container {
+        padding: 1.5rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.7rem;
+        font-size: 16px;
+    }
+
+    .servicios h2,
+    .ventajas h2,
+    .contacto h2,
+    .faq h2 {
+        font-size: 1.8rem;
+    }
+
+    .faq-question {
+        padding: 1.2rem;
+        font-size: 1rem;
+    }
+
+    .whatsapp-buttons .btn {
+        margin-bottom: 0.5rem;
+    }
+}
