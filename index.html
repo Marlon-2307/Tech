@@ -16,14 +16,18 @@
             <div class="nav-brand">
                 <i class="fas fa-tools"></i>
                 <span>Tech</span>
-                
             </div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#faq">Preguntas</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
+            <!-- Botón Hamburguesa para móvil -->
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
         </div>
     </nav>
 
@@ -45,7 +49,7 @@
                 Brindamos servicio técnico confiable para Movil, laptops y PCs, enfocado en diagnósticos precisos, reparaciones eficientes y el máximo rendimiento de tus equipos.
             </p>
 
-            <div class="hero-buttons-new">
+            <div class="hero-buttons-new" style="gap: 2rem;">
                 <a href="#contacto" class="btn-modern btn-modern-secondary">
                     <span class="btn-text">Solicitar Servicio</span>
                     <span class="btn-icon">→</span>
@@ -97,92 +101,377 @@
         </div>
     </section>
 
-    <!-- Sección de Servicios -->
-    <section id="servicios" class="servicios">
+    <!-- Sección de Servicios, Mantenimiento y Diagnóstico con Pestañas -->
+    <section id="servicios" class="servicios-tabs-section">
         <div class="container">
             <h2>Servicios</h2>
-            <div class="servicios-grid">
-                <!-- Tarjeta 1: Móviles -->
-                <div class="servicio-card">
-                    <div class="card-icon">
+            
+            <!-- Pestañas -->
+            <div class="tabs-header">
+                <button class="tab-button tab-active" data-tab="servicios-tab">
+                    <i class="fas fa-tools"></i> Soporte Tecnico
+                </button>
+                <button class="tab-button" data-tab="mantenimiento-tab">
+                    <i class="fas fa-shield-alt"></i> Mantenimiento
+                </button>
+                <button class="tab-button" data-tab="diagnostico-tab">
+                    <i class="fas fa-search"></i> Diagnóstico
+                </button>
+            </div>
+
+            <!-- Contenido Tab 1: Servicios -->
+            <div id="servicios-tab" class="tab-content tab-active">
+                <div class="servicios-grid">
+                    <!-- Tarjeta 1: Móviles -->
+                    <div class="servicio-card">
+                        <div class="card-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Reparación de Móviles</h3>
+                        <ul class="servicio-lista">
+                            <li><i class="fas fa-check"></i> Cambio de pantalla</li>
+                            <li><i class="fas fa-check"></i> Reparación de batería</li>
+                            <li><i class="fas fa-check"></i> Cambio de carcasa</li>
+                            <li><i class="fas fa-check"></i> Limpieza y mantenimiento</li>
+                            <li><i class="fas fa-check"></i> Recuperación de datos</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tarjeta 2: Laptops -->
+                    <div class="servicio-card">
+                        <div class="card-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3>Reparación de Laptops</h3>
+                        <ul class="servicio-lista">
+                            <li><i class="fas fa-check"></i> Cambio de pantalla/teclado</li>
+                            <li><i class="fas fa-check"></i> Reparación de batería</li>
+                            <li><i class="fas fa-check"></i> Actualizaciones de software</li>
+                            <li><i class="fas fa-check"></i> Limpieza térmica</li>
+                            <li><i class="fas fa-check"></i> Cambio de disco duro/SSD</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tarjeta 3: PCs -->
+                    <div class="servicio-card">
+                        <div class="card-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3>Reparación de PCs</h3>
+                        <ul class="servicio-lista">
+                            <li><i class="fas fa-check"></i> Diagnóstico de hardware</li>
+                            <li><i class="fas fa-check"></i> Actualización de componentes</li>
+                            <li><i class="fas fa-check"></i> Limpieza y mantenimiento</li>
+                            <li><i class="fas fa-check"></i> Instalación de software</li>
+                            <li><i class="fas fa-check"></i> Recuperación de datos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenido Tab 2: Mantenimiento Preventivo -->
+            <div id="mantenimiento-tab" class="tab-content">
+                <div class="servicios-grid">
+                    <div class="servicio-card">
+                        <div class="card-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Precauciones para tus equipos</h3>
+                        <ul class="servicio-lista">
+                            <li><i class="fas fa-check"></i> Mantén los equipos en lugares secos y ventilados.</li>
+                            <li><i class="fas fa-check"></i> Evita exponerlos a calor extremo o humedad.</li>
+                            <li><i class="fas fa-check"></i> Usa protectores de voltaje para enchufes críticos.</li>
+                            <li><i class="fas fa-check"></i> Realiza copias de seguridad periódicas de datos importantes.</li>
+                            <li><i class="fas fa-check"></i> No ignores ruidos o calentamientos inusuales.</li>
+                        </ul>
+                    </div>
+
+                    <div class="servicio-card">
+                        <div class="card-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Planes de Mantenimiento</h3>
+                        <p style="color:var(--color-text-light);">Ofrecemos planes personalizados: revisión única, mantenimiento mensual o anual para empresas. Incluye limpieza física, verificación de hardware, actualizaciones y optimización de software.</p>
+                        <a href="#contacto" class="btn btn-primary" style="margin-top:1rem;">Solicitar Plan</a>
+                    </div>
+
+                    <div class="servicio-card">
+                        <div class="card-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Checklist Rápido</h3>
+                        <ul class="servicio-lista">
+                            <li><i class="fas fa-check"></i> Limpieza interna (ventiladores, disipadores)</li>
+                            <li><i class="fas fa-check"></i> Revisión de baterías y conexiones</li>
+                            <li><i class="fas fa-check"></i> Actualización de sistema operativo y controladores</li>
+                            <li><i class="fas fa-check"></i> Escaneo antivirus y optimización</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenido Tab 3: Diagnóstico -->
+            <div id="diagnostico-tab" class="tab-content">
+                <div class="servicios-grid">
+                    <div class="servicio-card">
+                        <div class="card-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Análisis Completo</h3>
+                        <ul class="servicio-lista">
+                            <li><i class="fas fa-check"></i> Revisión de hardware y software</li>
+                            <li><i class="fas fa-check"></i> Identificación de problemas de rendimiento</li>
+                            <li><i class="fas fa-check"></i> Detección de malware y virus</li>
+                            <li><i class="fas fa-check"></i> Evaluación de estado de componentes</li>
+                            <li><i class="fas fa-check"></i> Reporte detallado de hallazgos</li>
+                        </ul>
+                    </div>
+
+                    <div class="servicio-card">
+                        <div class="card-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3>Diagnóstico Especializado</h3>
+                        <ul class="servicio-lista">
+                            <li><i class="fas fa-check"></i> Pruebas de carga y estrés</li>
+                            <li><i class="fas fa-check"></i> Análisis de temperatura y consumo energético</li>
+                            <li><i class="fas fa-check"></i> Verificación de integridad de datos</li>
+                            <li><i class="fas fa-check"></i> Evaluación de seguridad</li>
+                            <li><i class="fas fa-check"></i> Recomendaciones de mejora</li>
+                        </ul>
+                    </div>
+
+                    <div class="servicio-card">
+                        <div class="card-icon">
+                            <i class="fas fa-file-invoice"></i>
+                        </div>
+                        <h3>Reporte y Presupuesto</h3>
+                        <p style="color:var(--color-text-light);">Recibe un diagnóstico completo sin costo. Incluye informe detallado de problemas encontrados, opciones de reparación, presupuesto estimado y garantía en nuestros servicios.</p>
+                        <a href="#contacto" class="btn btn-primary" style="margin-top:1rem;">Solicitar Diagnóstico</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto (Diseño Alternativo Moderno) -->
+    <section id="contacto" class="contacto-alt">
+        <div class="container">
+            <h2>Contáctanos</h2>
+            <div class="contacto-alt-wrapper">
+                <!-- Tarjetas de contacto rápido -->
+                <div class="contacto-alt-cards">
+                    <div class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Teléfono</h3>
+                        <p>Llámanos directamente para consultas</p>
+                        <a href="tel:+573006052169">+57 300 605 2169</a>
+                    </div>
+
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>Envíanos un correo con tus dudas</p>
+                        <a href="mailto:marloncolon23@gmail.com">marloncolon23@gmail.com</a>
+                    </div>
+
+                    <div class="contact-card">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>WhatsApp</h3>
+                        <p>Atención rápida por mensajería al instante</p>
+                        <a href="https://wa.me/573006052169?text=Hola,%20necesito%20información" target="_blank">Escribir ahora</a>
+                    </div>
+                </div>
+
+                <!-- Formulario con diseño alternativo -->
+                <div class="formulario-alt-wrapper">
+                    <!-- <h3>Solicita tu Servicio</h3> -->
+                    <form id="formularioContacto" class="formulario-alt" autocomplete="on">
+                        <div class="formulario-alt-left">
+                            <div class="form-group">
+                                <label for="nombre">Nombre completo</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Correo electrónico</label>
+                                <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="text" id="telefono" name="telefono" placeholder="+57 300 000 0000" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tipo-dispositivo">Tipo de dispositivo</label>
+                                <select id="tipo-dispositivo" name="tipo-dispositivo" required>
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="movil">Móvil</option>
+                                    <option value="laptop">Laptop</option>
+                                    <option value="pc">PC de escritorio</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tipo-servicio">Tipo de servicio</label>
+                                <select id="tipo-servicio" name="tipo-servicio" required>
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="diagnostico">Diagnóstico</option>
+                                    <option value="reparacion">Reparación</option>
+                                    <option value="mantenimiento">Mantenimiento preventivo</option>
+                                    <option value="soporte">Soporte / Consulta</option>
+                                </select>
+                            </div>
+
+                            <!-- <div class="form-group">
+                                <label for="presupuesto">Presupuesto (opcional)</label>
+                                <input type="text" id="presupuesto" name="presupuesto" placeholder="$">
+                            </div> -->
+
+                            <div class="form-group">
+                                <label for="descripcion">Descripción del problema</label>
+                                <textarea id="descripcion" name="descripcion" placeholder="Describe el problema o lo que necesitas" required></textarea>
+                            </div>
+
+                            <div id="formularioEstatus" class="formulario-alt-estatus" aria-live="polite"></div>
+
+                            <button type="submit" class="formulario-alt-submit">Enviar</button>
+                        </div>
+
+                        <div class="formulario-alt-right">
+                            <h4><i class="fas fa-info-circle"></i> ¿Por qué contactarnos?</h4>
+                            <p>Somos expertos en reparación de equipos electrónicos con garantía en todos nuestros servicios.</p>
+                            
+                            <ul class="contact-tips">
+                                <li>Respuesta en menos de 24 horas</li>
+                                <li>Diagnóstico gratuito</li>
+                                <li>Garantía de 6 meses</li>
+                                <li>Técnicos certificados</li>
+                                <li>Servicio de calidad garantizado</li>
+                            </ul>
+
+                            <h4 style="margin-top: 1.5rem;"><i class="fas fa-clock"></i> Horario de Atención</h4>
+                            <p><strong>Lunes - Viernes:</strong> 9:00 AM - 6:00 PM<br>
+                            <strong>Sábado:</strong> 10:00 AM - 3:00 PM<br>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <!-- Sección de Blog (CLARO) -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2>Blog Tech</h2>
+            <p class="blog-subtitle">Consejos, tutoriales y noticias sobre reparación y mantenimiento de equipos</p>
+            
+            <div class="blog-grid">
+                <!-- Artículo 1 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-battery-quarter"></i>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Mantenimiento</span>
+                        <h3>¿Por qué se agota rápido la batería de tu móvil?</h3>
+                        <p>Descubre las razones principales por las que la batería de tu dispositivo pierde carga rápidamente y aprende cómo solucionarlo.</p>
+                        <div class="blog-footer">
+                            <span class="blog-date"><i class="fas fa-calendar"></i> 28 Ene 2026</span>
+                            <a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 2 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Cuidados</span>
+                        <h3>Cómo mantener tu laptop fresca en verano</h3>
+                        <p>El calor extremo puede dañar los componentes de tu laptop. Te mostramos cómo mantenerla a temperatura óptima.</p>
+                        <div class="blog-footer">
+                            <span class="blog-date"><i class="fas fa-calendar"></i> 25 Ene 2026</span>
+                            <a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 3 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Seguridad</span>
+                        <h3>Protege tu PC de malware y virus</h3>
+                        <p>Guía completa sobre cómo identificar y eliminar software malicioso de tu computadora de forma segura.</p>
+                        <div class="blog-footer">
+                            <span class="blog-date"><i class="fas fa-calendar"></i> 22 Ene 2026</span>
+                            <a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 4 -->
+                <article class="blog-card">
+                    <div class="blog-image">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3>Reparación de Móviles</h3>
-                    <ul class="servicio-lista">
-                        <li><i class="fas fa-check"></i> Cambio de pantalla</li>
-                        <li><i class="fas fa-check"></i> Reparación de batería</li>
-                        <li><i class="fas fa-check"></i> Cambio de carcasa</li>
-                        <li><i class="fas fa-check"></i> Limpieza y mantenimiento</li>
-                        <li><i class="fas fa-check"></i> Recuperación de datos</li>
-                    </ul>
-                </div>
-
-                <!-- Tarjeta 2: Laptops -->
-                <div class="servicio-card">
-                    <div class="card-icon">
-                        <i class="fas fa-laptop"></i>
+                    <div class="blog-content">
+                        <span class="blog-category">Reparación</span>
+                        <h3>Cambio de pantalla de móvil: ¿original o compatible?</h3>
+                        <p>Comparamos las ventajas y desventajas entre pantallas originales y compatibles para tu smartphone.</p>
+                        <div class="blog-footer">
+                            <span class="blog-date"><i class="fas fa-calendar"></i> 20 Ene 2026</span>
+                            <a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                    <h3>Reparación de Laptops</h3>
-                    <ul class="servicio-lista">
-                        <li><i class="fas fa-check"></i> Cambio de pantalla/teclado</li>
-                        <li><i class="fas fa-check"></i> Reparación de batería</li>
-                        <li><i class="fas fa-check"></i> Actualizaciones de software</li>
-                        <li><i class="fas fa-check"></i> Limpieza térmica</li>
-                        <li><i class="fas fa-check"></i> Cambio de disco duro/SSD</li>
-                    </ul>
-                </div>
+                </article>
 
-                <!-- Tarjeta 3: PCs -->
-                <div class="servicio-card">
-                    <div class="card-icon">
-                        <i class="fas fa-desktop"></i>
+                <!-- Artículo 5 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-hard-drive"></i>
                     </div>
-                    <h3>Reparación de PCs</h3>
-                    <ul class="servicio-lista">
-                        <li><i class="fas fa-check"></i> Diagnóstico de hardware</li>
-                        <li><i class="fas fa-check"></i> Actualización de componentes</li>
-                        <li><i class="fas fa-check"></i> Limpieza y mantenimiento</li>
-                        <li><i class="fas fa-check"></i> Instalación de software</li>
-                        <li><i class="fas fa-check"></i> Recuperación de datos</li>
-                    </ul>
-                </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Almacenamiento</span>
+                        <h3>SSD vs HDD: ¿Cuál es mejor para ti?</h3>
+                        <p>Análisis detallado de las diferencias, ventajas y desventajas entre unidades de estado sólido y discos duros.</p>
+                        <div class="blog-footer">
+                            <span class="blog-date"><i class="fas fa-calendar"></i> 18 Ene 2026</span>
+                            <a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 6 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Tips</span>
+                        <h3>Limpieza de hardware: Guía paso a paso</h3>
+                        <p>Aprende cómo limpiar correctamente los componentes internos de tu PC sin causar daños.</p>
+                        <div class="blog-footer">
+                            <span class="blog-date"><i class="fas fa-calendar"></i> 15 Ene 2026</span>
+                            <a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Ventajas -->
-    <section class="ventajas">
+    <!-- Sección de Preguntas Frecuentes (FAQ) (OSCURO) -->
+    <section id="faq" class="faq faq-dark">
         <div class="container">
-            <h2>¿Por qué elegirnos?</h2>
-            <div class="ventajas-grid">
-                <div class="ventaja-card">
-                    <i class="fas fa-award"></i>
-                    <h3>Experiencia Garantizada</h3>
-                    <p>Más de 10 años reparando dispositivos con excelencia</p>
-                </div>
-                <div class="ventaja-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Garantía en Servicios</h3>
-                    <p>Todos nuestros trabajos incluyen garantía de 6 meses</p>
-                </div>
-                <div class="ventaja-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>Servicio Rápido</h3>
-                    <p>Reparaciones en 24-48 horas en la mayoría de casos</p>
-                </div>
-               <!--  <div class="ventaja-card">
-                    <i class="fas fa-dollar-sign"></i>
-                    <h3>Precios Competitivos</h3>
-                    <p>Los mejores precios del mercado sin comprometer calidad</p>
-                </div> -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección de Preguntas Frecuentes (FAQ) -->
-    <section id="faq" class="faq">
-        <div class="container">
-            <h2>Preguntas Frecuentes</h2>
+            <h2 style="color: white;">Preguntas Frecuentes</h2>
             <p class="faq-subtitle">Encuentra respuestas a las preguntas más comunes sobre nuestros servicios</p>
             
             <div class="faq-grid">
@@ -311,21 +600,41 @@
         <a href="https://wa.me/3006052169?text=Hola,%20necesito%20información%20sobre%20sus%20servicios%20de%20reparación%20de%20celulares%20y%20PCs."
         class="float-btn whatsapp"
         target="_blank"
-        aria-label="WhatsApp">
+        aria-label="WhatsApp"
+        data-tooltip="WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
-
 
         <!-- Correo -->
         <a href="mailto:marloncolon23@gmail.com" 
         class="float-btn email" 
-        title="Envíanos un correo">
+        aria-label="Email"
+        data-tooltip="Envíanos un correo">
             <i class="fas fa-envelope"></i>
         </a>
     </div>
 
-    <!-- Footer -->
-    <footer id="contacto" class="footer">
+
+     <!-- Carrusel de Marcas -->
+    <section id="marcas" class="marcas-carousel">
+        <div class="container">
+            <h2>Marcas </h2>
+            <p class="marcas-subtitle">Trabajamos con las principales marcas del mercado</p>
+
+            <div class="brand-carousel" role="list" aria-label="Carrusel de marcas">
+                <div class="brand-item" role="listitem"><i class="fab fa-apple"></i><span class="sr-only">Apple</span></div>
+                <div class="brand-item" role="listitem"><i class="fab fa-android"></i><span class="sr-only">Android</span></div>
+                <div class="brand-item" role="listitem"><i class="fab fa-windows"></i><span class="sr-only">Windows</span></div>
+                <div class="brand-item" role="listitem"><i class="fab fa-laptop-code"></i><span class="sr-only">Laptops</span></div>
+                <div class="brand-item" role="listitem"><i class="fas fa-mobile-alt"></i><span class="sr-only">Móviles</span></div>
+                <div class="brand-item" role="listitem"><i class="fas fa-server"></i><span class="sr-only">Servidores</span></div>
+                <div class="brand-item" role="listitem"><i class="fas fa-hdd"></i><span class="sr-only">Almacenamiento</span></div>
+            </div>
+        </div>
+    </section>
+   
+
+    <footer class="footer">
         <div class="container">
             <!-- Sección 1: Acerca de -->
             <div class="footer-section">
