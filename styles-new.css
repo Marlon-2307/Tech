@@ -51,7 +51,7 @@ body {
 .navbar {
     background: linear-gradient(135deg, #0a1128 0%, #1a2847 50%, #0f1629 100%);
     color: white;
-    padding: 0.2rem 0;
+    padding: 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -125,7 +125,7 @@ body {
     top: 50%;
     right: -30%;          
     transform: translateY(-50%);
-    z-index: 1;
+    z-index: 0;
     pointer-events: none;
 }
 
@@ -1705,12 +1705,35 @@ body {
     pointer-events: none;
 }
 
+.brand-text.short {
+    display: none;
+}
+
+
 .brand-carousel::before { left: 0; background: linear-gradient(90deg, #fff 0%, rgba(255,255,255,0) 100%); }
 .brand-carousel::after { right: 0; background: linear-gradient(270deg, #fff 0%, rgba(255,255,255,0) 100%); }
 
 .sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
 @media (max-width: 768px) {
+
+     .nav-brand {
+        gap: 0;
+    }
+
+    .nav-brand a {
+        display: none
+    }
+
+
+
+    .brand-text {
+        display: none;
+    }
+
+    .logo {
+        width: 90%;
+    }
 
      .nav-toggle {
         display: block;
@@ -2174,6 +2197,10 @@ body {
     .hero-right-column {
         grid-column: 1;
         padding: 40px 25px;
+    }
+
+    .hero-modern-content h1 {
+        font-size: 2rem;
     }
 
     .hero-title-new {
